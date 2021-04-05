@@ -41,12 +41,22 @@ public class UserDemoController {
                 .setMsg("获取成功！");
     }
 
-    @PostMapping("user")
+    @PutMapping("user")
     public Object saveUser(@RequestBody UserDemo user){
-        boolean save = userDemoService.save(user);
-        return R.ok(save)
-                .setData(save)
+        userDemoService.save(user);
+        return R.ok(user.getId())
+                .setData(user.getId())
                 .setCode(Response.SC_OK)
                 .setMsg("保存成功！");
+    }
+
+    @PostMapping("user")
+    public Object updateUser(@RequestBody UserDemo user){
+        //userDemoService.saveOrUpdate(user);
+        userDemoService.updateById(user);
+        return R.ok(user)
+                .setData(user)
+                .setCode(Response.SC_OK)
+                .setMsg("修改成功！");
     }
 }

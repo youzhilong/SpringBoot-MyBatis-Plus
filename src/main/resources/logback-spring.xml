@@ -3,7 +3,7 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <logger name="org.springframework.web" level="INFO"/>
     <logger name="org.springboot.sample" level="TRACE"/>
-    <logger name="com.youhopefly.smp" level="DEBUG"/>
+    <logger name="com.youhopefly.smp" level="INFO"/>
     <!-- 日志输出级别，OFF level > FATAL > ERROR > WARN > INFO > DEBUG > ALL level -->
     <logger name="org.springframework.web" level="INFO"/>
     <logger name="org.springboot.sample" level="INFO"/>
