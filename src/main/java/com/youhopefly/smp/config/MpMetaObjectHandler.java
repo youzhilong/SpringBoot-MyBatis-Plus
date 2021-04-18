@@ -21,6 +21,7 @@ public class MpMetaObjectHandler implements MetaObjectHandler {
         this.setFieldValByName("createTime", LocalDateTime.now(),metaObject);
         this.setFieldValByName("updateTime",LocalDateTime.now(),metaObject);
         this.setFieldValByName("version",1,metaObject);
+        this.setFieldValByName("deleted",0,metaObject);
     }
 
     @Override

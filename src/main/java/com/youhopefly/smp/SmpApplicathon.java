@@ -16,4 +16,6 @@ public class SmpApplicathon {
     public static void main(String[] args) {
         SpringApplication.run(SmpApplicathon.class, args);
     }
+
+
 }

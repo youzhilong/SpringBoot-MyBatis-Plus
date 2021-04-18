@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youhopefly.smp.mapper.UserDemoMapper">
+  <resultMap id="BaseResultMap" type="com.youhopefly.smp.pojo.UserDemo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="tag_id" jdbcType="VARCHAR" property="tagId" />
+    <result column="user_type_id" jdbcType="VARCHAR" property="userTypeId" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="phone" jdbcType="BIGINT" property="phone" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    `id`, `name`, `birthday`, `age`, `tag_id`, `user_type_id`, `version`, `phone`, `create_time`,
+    `update_time`, `deleted`
+  </sql>
+  <delete id="delUserDemoByIds">
+        delete from user_demo
+    where id =
+    <foreach collection="ids" index="index" item="id" open="(" separator="or" close=")">
+      #{id}
+    </foreach>
+
+  </delete>
+</mapper>

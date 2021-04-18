@@ -1,5 +1,9 @@
 package com.youhopefly.smp.pojo;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -47,14 +51,26 @@ public class UserDemo extends BasePoJo implements Serializable {
     private Long phone;
 
     /**
-     * 标签id， ；分割
+     * 标签id， ;分割
      */
     private String tagId;
 
     /**
-     * 职称id，；分割
+     * 职称id，;分割
      */
     private String userTypeId;
 
+    /**
+     * 乐观锁
+     */
+    @Version
+    @TableField(fill = FieldFill.INSERT)
+    private Integer version;
 
+    /**
+     * 乐观锁
+     */
+    @TableLogic
+    @TableField(fill = FieldFill.INSERT)
+    private Integer deleted;
 }

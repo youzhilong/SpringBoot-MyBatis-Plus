@@ -18,6 +18,7 @@ mybatis-plus:
   type-aliases-package: com.youhopefly.smp.pojo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/youhopefly/smp/mapper/xml/*.xml
 server:
   port: 8888
   servlet:
